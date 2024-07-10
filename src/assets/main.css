@@ -1,3 +1,16 @@
 body{
     font-family: 'Roboto';
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.layout{
+    padding: 1rem;
+}
+
+.layout__grid{
+    position: relative;
 }

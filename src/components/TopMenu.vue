@@ -2,6 +2,9 @@
 <template>
     <div class="TopMenu card">
         <Menubar :model="items">
+            <template #start>
+                <Image src="src/assets/img/pin.gif" alt="Image" width="50" />
+            </template>   
             <template #item="{ item, props }">
                 <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
                     <a v-ripple class="flex items-center" :href="href" v-bind="props.action" @click="navigate">
@@ -18,11 +21,6 @@
 </template>
 
 <script setup>
-    import Menubar from 'primevue/menubar';
-    import Badge from 'primevue/badge';
-    import Button from 'primevue/button';
-    import Image from 'primevue/image';
-
     import { useRouter } from 'vue-router';
     const router = useRouter();
 

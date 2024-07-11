@@ -5,7 +5,7 @@ import LoginLayout from '@/components/layouts/LoginLayout.vue';
 
 import index from '../views/index.vue'
 import login from '../views/login.vue'
-import incidentes from '../views/incidentes/index.vue'
+import incidentes from '../views/incidents/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,7 +21,7 @@ const router = createRouter({
         },
         {
           path: 'incidentes',
-          name: 'incidentes',
+          name: 'incidents',
           component: incidentes,
         },
       ],

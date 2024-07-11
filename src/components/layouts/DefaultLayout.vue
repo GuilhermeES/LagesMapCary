@@ -5,7 +5,6 @@
             <main>
                 <RouterView />
             </main>
-            <Map/>
         </div>
     </div>
 </template>
@@ -14,5 +13,4 @@
     import { RouterView } from 'vue-router'
 
     import TopMenu from '@/components/TopMenu.vue';
-    import Map from '@/components/Map.vue';
 </script>

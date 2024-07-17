@@ -14,3 +14,18 @@ a{
 .layout__grid{
     position: relative;
 }
+
+.p-inputtext{
+    width: 100%;
+}
+
+.p-field{
+    margin-bottom: 1rem;
+}
+.p-invalid .p-inputtext {
+    border-color: var(--p-red-500);
+}
+
+.p-error {
+    color: var(--p-red-500);
+}

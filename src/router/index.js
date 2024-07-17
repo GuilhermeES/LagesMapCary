@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
-import LoginLayout from '@/components/layouts/LoginLayout.vue';
 
 import index from '../views/index.vue'
-import login from '../views/login.vue'
 import incidentes from '../views/incidents/index.vue'
 
 const router = createRouter({
@@ -23,17 +21,6 @@ const router = createRouter({
           path: 'incidentes',
           name: 'incidents',
           component: incidentes,
-        },
-      ],
-    },
-    {
-      path: '/login',
-      component: LoginLayout,
-      children: [
-        {
-          path: '',
-          name: 'login',
-          component: login,
         },
       ],
     },

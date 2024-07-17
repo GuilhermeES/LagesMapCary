@@ -14,18 +14,28 @@
                 </router-link>
             </template>
             <template #end >
-                <Button as="router-link" label="Entrar" icon="pi pi-user" to="/login" />
+                <div class="menubar__buttons">
+                    <Button @click="visible = true" label="Entrar" icon="pi pi-user" />
+                    <ModalLogin :visible="visible" @close-modal="visible = false" />
+                    
+                    <Button @click="visibleRegister = true" label="Registrar" severity="secondary"  outlined icon="pi pi-user" />
+                    <ModalRegister :visibleRegister="visibleRegister" @close-modal-register="visibleRegister = false" />
+                </div>
             </template>
         </Menubar>
     </div>
 </template>
 
 <script setup>
+    import ModalLogin from './ModalLogin.vue';
+    import ModalRegister from './ModalRegister.vue';
     import { useRouter } from 'vue-router';
-    const router = useRouter();
-
     import { ref } from "vue";
 
+    const router = useRouter();
+    const visible = ref(false);
+    const visibleRegister = ref(false);
+    
     const items = ref([
         {
             label: 'Home',
@@ -45,5 +55,9 @@
         margin-bottom: 1rem;
         z-index: 100;
         position: relative;
+    }
+    .menubar__buttons{
+        display: flex;
+        gap: 10px;
     }
 </style>

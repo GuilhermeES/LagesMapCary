@@ -55,7 +55,6 @@
     const email = ref('');
     const password = ref('');
     const submitted = ref(false);
-    const toast = useToast();
 
     async function onSubmit() {
         submitted.value = true;

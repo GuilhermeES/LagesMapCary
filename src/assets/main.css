@@ -9,6 +9,7 @@ a{
 
 .layout{
     padding: 1rem;
+    background: #e5e5e5;
 }
 
 .layout__grid{
@@ -28,4 +29,10 @@ a{
 
 .p-error {
     color: var(--p-red-500);
+}
+
+.badge{
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
 }

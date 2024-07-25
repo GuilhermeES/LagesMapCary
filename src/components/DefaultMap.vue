@@ -6,7 +6,7 @@
     import L from 'leaflet';
     import 'leaflet/dist/leaflet.css';
     import { ref, onMounted } from 'vue'
-
+    
     const southWest = ref([-28.000, -50.450])
     const northEast = ref([-27.700, -50.100])
 

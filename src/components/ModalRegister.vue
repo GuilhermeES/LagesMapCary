@@ -37,8 +37,8 @@
                 </form>
             </div>
             <template #footer>
-                <Button label="Fechar" text severity="secondary" @click="$emit('close-modal-register')" autofocus />
-                <Button label="Registrar" @click="onSubmit()" severity="success" autofocus />
+                <Button label="Fechar" text severity="secondary" @click="$emit('close-modal-register'), clearForm()" autofocus />
+                <Button label="Registrar" :loading="loading" @click="onSubmit()" severity="success" autofocus />
             </template>
         </Dialog>
     </div>
@@ -55,11 +55,14 @@
     const email = ref('');
     const password = ref('');
     const submitted = ref(false);
+    const loading = ref(false);
 
     async function onSubmit() {
         submitted.value = true;
 
         if (name.value && email.value && password.value) {
+            loading.value = true
+
             let schema = {
                 nome: name.value,
                 email: email.value,
@@ -69,9 +72,11 @@
             try {
                 await post('/register', schema);
                 clearForm();
+                loading.value = false
             } 
             catch (error) {
                 console.error('Erro ao registrar:', error);
+                loading.value = false
             } 
         }
     }

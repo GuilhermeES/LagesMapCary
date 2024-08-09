@@ -1,21 +1,16 @@
 # LagesMapCary
 
-🏗️ Projeto em construção focado em gerenciamento de incidentes na cidade.
+🏗️
+Mapcity é um projeto desenvolvido em Vue 3 por mim que permite registrar e visualizar pontos de ocorrências em um mapa da minha cidade. Essas ocorrências podem incluir uma variedade de tipos, como buracos em ruas, problemas de infraestrutura, entre outros.
 
-## Project Setup
+## Funcionalidades
+✅​ Registro de usuário <br>
+✅​ Login de usuário <br>
+⌛​ CRUD de ocorrências <br>
+⌛​ Filtragem de ocorrências
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+## Tecnologias Utilizadas
+Vue 3 <br>
+Vue Router  <br>
+Pinia <br>
+PrimeVue

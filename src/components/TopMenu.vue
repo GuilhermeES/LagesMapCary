@@ -14,12 +14,15 @@
                 </router-link>
             </template>
             <template #end >
-                <div class="menubar__buttons">
+                <div class="menubar__buttons" v-if="!store.isAuth">
                     <Button @click="visible = true" label="Entrar" icon="pi pi-user" />
                     <ModalLogin :visible="visible" @close-modal="visible = false" />
                     
                     <Button @click="visibleRegister = true" label="Registrar" severity="secondary"  outlined icon="pi pi-user" />
                     <ModalRegister :visibleRegister="visibleRegister" @close-modal-register="visibleRegister = false" />
+                </div>
+                <div class="logged" v-if="store.isAuth">
+                    Olá <strong> {{store.getUser.nome}} </strong> | <Button icon="pi pi-sign-out" @click="logout()" severity="danger" size="small"/>
                 </div>
             </template>
         </Menubar>
@@ -29,10 +32,14 @@
 <script setup>
     import ModalLogin from './ModalLogin.vue';
     import ModalRegister from './ModalRegister.vue';
-    import { useRouter } from 'vue-router';
     import { ref } from "vue";
-
+    
+    import { useRouter } from 'vue-router';
     const router = useRouter();
+
+    import { userStore } from '@/stores/user';
+    const store = userStore()
+
     const visible = ref(false);
     const visibleRegister = ref(false);
     
@@ -48,6 +55,11 @@
             route: '/incidentes',
         },
     ]);
+
+    function logout() {
+        store.logoutUser()
+    }
+
 </script>
 
 <style scoped>

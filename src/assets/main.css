@@ -1,6 +1,13 @@
+
 body{
     font-family: 'Roboto';
     margin: 0;
+}
+
+h1, h2{
+    margin: 0;
+    color: #334155;
+    font-size: 20px;
 }
 
 a{
@@ -9,7 +16,8 @@ a{
 
 .layout{
     padding: 1rem;
-    background: #e5e5e5;
+    background-color: #f4f2ee;
+    height: 100vh;
 }
 
 .layout__grid{
@@ -35,4 +43,16 @@ a{
     display: flex;
     gap: 0.5rem;
     padding-top: 0.5rem;
+}
+
+.p-breadcrumb{
+    background-color: transparent !important;
+}
+
+.p-breadcrumb-item-link span{
+    color: var(--p-breadcrumb-item-color) !important;
+}
+
+.p-breadcrumb-item:last-child{
+    font-weight: bold;
 }

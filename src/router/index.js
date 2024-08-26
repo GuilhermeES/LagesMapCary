@@ -4,10 +4,11 @@ import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
 
 import index from '../views/index.vue'
 import incidentes from '../views/incidents/index.vue'
+import newIncidente from '../views/incidents/new.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [ 
+  routes: [
     {
       path: '/',
       component: DefaultLayout,
@@ -21,6 +22,11 @@ const router = createRouter({
           path: 'incidentes',
           name: 'incidents',
           component: incidentes,
+        },
+        {
+          path: 'incidentes/novo',
+          name: 'new-incident',
+          component: newIncidente,
         },
       ],
     },

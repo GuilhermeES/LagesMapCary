@@ -38,7 +38,7 @@
             </div>
             <template #footer>
                 <Button label="Fechar" text severity="secondary" @click="$emit('close-modal-register'), clearForm()" autofocus />
-                <Button label="Registrar" :loading="loading" @click="onSubmit()" severity="success" autofocus />
+                <Button label="Registrar" :loading="loading" @click="onSubmit()" severity="success" autofocus raised  />
             </template>
         </Dialog>
     </div>

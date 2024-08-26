@@ -27,8 +27,8 @@
                 </form>
             </div>
             <template #footer>
-                <Button label="Fechar" text severity="secondary" @click="$emit('close-modal'), clearForm()" autofocus />
-                <Button label="Entrar" severity="success" autofocus @click="onLogin()" />
+                <Button label="Fechar" text severity="secondary" @click="$emit('close-modal'), clearForm()" autofocus  />
+                <Button label="Entrar" :loading="loading" severity="success" autofocus @click="onLogin()" raised />
             </template>
         </Dialog>
     </div>
@@ -46,11 +46,13 @@
     const email = ref('');
     const password = ref('');
     const submitted = ref(false);
+    const loading = ref(false);
 
     async function onLogin() {
         submitted.value = true;
 
         if (email.value && password.value) {
+            loading.value = true
 
             let schema = {
                 email: email.value,
@@ -62,11 +64,12 @@
                 store.loginUser(login.data, login.token, login.expires_in)
                 clearForm();
                 emit('close-modal');
-                
+                loading.value = false
             } 
             catch (error) {
                 console.error('Erro ao registrar:', error);
                 emit('close-modal');
+                loading.value = false
             } 
         }
     }

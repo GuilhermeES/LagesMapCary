@@ -3,7 +3,7 @@
     <div class="TopMenu card">
         <Menubar :model="items">
             <template #start>
-                <Image src="src/assets/img/pin.gif" alt="Image" width="50" />
+               <i class="pi pi-map-marker" style="font-size: 1.5rem"></i>
             </template>   
             <template #item="{ item, props }">
                 <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
@@ -15,10 +15,10 @@
             </template>
             <template #end >
                 <div class="menubar__buttons" v-if="!store.isAuth">
-                    <Button @click="visible = true" label="Entrar" icon="pi pi-user" />
+                    <Button @click="visible = true" label="Entrar" icon="pi pi-user" raised  />
                     <ModalLogin :visible="visible" @close-modal="visible = false" />
                     
-                    <Button @click="visibleRegister = true" label="Registrar" severity="secondary"  outlined icon="pi pi-user" />
+                    <Button @click="visibleRegister = true" label="Registrar" severity="secondary"  outlined icon="pi pi-user" raised  />
                     <ModalRegister :visibleRegister="visibleRegister" @close-modal-register="visibleRegister = false" />
                 </div>
                 <div class="logged" v-if="store.isAuth">
@@ -58,6 +58,12 @@
 
     function logout() {
         store.logoutUser()
+        router.push({ name: 'home' })
+    }
+
+    function toggleDarkMode() {
+        const element = document.querySelector('html');
+        element.classList.toggle('my-app-dark');
     }
 
 </script>

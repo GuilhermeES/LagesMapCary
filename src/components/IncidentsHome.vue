@@ -16,7 +16,7 @@
                         <strong>Data: 00/00/0000 00:00</strong> <br>
                         <div class="mb-3"> Batida de veículo </div>
                         <div class="badge">
-                            <Badge value="Informativo" severity="info" size="small"></Badge>
+                            <div>Situação: </div>
                             <Badge value="Grave" severity="danger" size="small"></Badge>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                     <strong>Data: 00/00/0000 00:00</strong> <br>
                     <div class="mb-3"> Buraco no asfalto </div>
                     <div class="badge">
-                        <Badge value="Informativo" severity="info" size="small"></Badge>
+                        <div>Situação: </div>
                         <Badge value="Médio" severity="warn" size="small"></Badge>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                         <strong>Data: 00/00/0000 00:00</strong> <br>
                         <div class="mb-3"> Incêndio </div>
                         <div class="badge">
-                            <Badge value="Informativo" severity="info" size="small"></Badge>
+                            <div>Situação: </div>
                             <Badge value="Grave" severity="danger" size="small"></Badge>
                         </div>
                     </div>
